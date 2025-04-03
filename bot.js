@@ -4,6 +4,7 @@ const { Client, GatewayIntentBits, ActionRowBuilder, ButtonBuilder, ButtonStyle,
 // Załaduj konfigurację z pliku config.json
 const config = require('./config.json');  // Ścieżka do pliku config.json
 const { ADMIN_ROLE_ID } = require('./config.json');
+require('./index.js');
 
 const client = new Client({
     intents: [
@@ -331,5 +332,6 @@ client.on('interactionCreate', async (interaction) => {
         }, 5000);
     }
 });
+
 // Logowanie bota za pomocą tokenu z config.json
 client.login(config.TOKEN).catch(console.error);
